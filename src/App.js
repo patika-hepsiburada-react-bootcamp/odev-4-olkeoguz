@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import CityControls from './components/Controls/CityControls';
+import Weather from './components/Weather/Weather';
+import useGetWeather from './helpers/useGetWeather';
+
+import './App.scss';
 
 function App() {
+  const [selectedCity, setSelectedCity] = useState('istanbul');
+
+  const { data: weatherData, loading, error } = useGetWeather(selectedCity);
+
+  console.log(weatherData?.getCityByName);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='root'>
+        <CityControls
+          setSelectedCity={setSelectedCity}
+          selectedCity={selectedCity}
+        />
+        <Weather
+          selectedCity={selectedCity}
+          weatherData={weatherData}
+          loading={loading}
+          error={error}
+        />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,106 @@
+.dropdownContainer {
+  flex:1;
+  padding: 32px;
+  margin-top: 8rem;
+
+  .select-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+
+    .search-box {
+      input {
+        display: inline-block;
+        width: 100%;
+        padding: 12px 24px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        position: absolute;
+        border-radius: 8px 8px 0 0;
+        z-index: 100;
+        border: 8px solid #2f3640;
+        outline: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s;
+      }
+    }
+
+    & label {
+      display: inline-block;
+      cursor: pointer;
+      width: 100%;
+      text-transform: capitalize;
+
+      .radio {
+        display: none;
+      }
+
+      &.selectedCity {
+        color: #daa520;
+      }
+    }
+    .selected {
+      background-color: #2f3640;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      color: #f5f6fa;
+      padding: 12px 24px;
+      order: 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: capitalize;
+      opacity: 0.7;
+    }
+
+    .options-container {
+      background: #2f3640;
+      color: #f5f6fa;
+      max-height: 0px;
+      width: 100%;
+      opacity: 0;
+      transition: all 0.4s;
+      border-radius: 8px;
+      overflow: hidden;
+      order: 1;
+
+      &.active {
+        max-height: 240px;
+        overflow-y: scroll;
+        opacity: 0.7;
+        margin-top: 54px;
+      }
+
+      &.active ~ .search-box input {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      &::-webkit-scrollbar {
+        width: 8px;
+        background-color: #0d141f;
+        border-radius: 4px 4px 4px 0;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #525861;
+        border-radius: 4px 4px 4px 0;
+      }
+
+      .option {
+        padding: 12px 24px;
+        background: #2f3640;
+        color: #f5f6fa;
+        margin-bottom: 10px;
+        cursor: pointer;
+        &:hover {
+          background: #414b56;
+        }
+      }
+    }
+  }
+}
