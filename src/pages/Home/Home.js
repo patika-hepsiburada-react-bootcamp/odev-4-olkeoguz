@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import CityControls from '../components/Controls/CityControls';
-import Weather from '../components/Weather/Weather';
+import CityControls from '../../components/Controls/CityControls';
+import Weather from '../../components/Weather/Weather';
 
 import { useQuery } from '@apollo/client';
-import { WEATHER_QUERY } from '../queries/queries';
+import { WEATHER_QUERY } from '../../queries/queries';
 
-import '../Home.scss';
-import SvgContainer from '../components/UI/SvgContainer';
+import './Home.scss';
+import SvgContainer from '../../components/UI/SvgContainer';
 
 function Home() {
   const [selectedCity, setSelectedCity] = useState('istanbul');
