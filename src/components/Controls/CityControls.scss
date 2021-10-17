@@ -1,10 +1,9 @@
 .dropdownContainer {
   flex:1;
   padding: 32px;
-  margin-top: 8rem;
 
-  h2{
-    opacity:0.7;
+  h2 {
+    opacity: 0.7;
   }
 
   .select-box {
@@ -47,8 +46,8 @@
       }
     }
     .selected {
-      // background-color:rgba(255, 255, 255, 0.363);
-      background-color: #2f3640;
+      background-color: rgba(255, 255, 255, 0.363);
+      backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
       border-radius: 8px;
       margin-bottom: 8px;
       color: #f5f6fa;

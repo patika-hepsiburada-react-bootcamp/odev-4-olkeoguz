@@ -10,3 +10,17 @@
     grid-template-columns: 1fr;
   }
 }
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-family: 'Festive', cursive;
+    font-family: 'Festive', cursive;
+    font-size: 4rem;
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ArrowDown from './ArrowDown';
 import ArrowUp from './ArrowUp';
-import { cities } from '../../helpers/cities';
+import { cities } from '../../data/cities';
 
 import './CityControls.scss';
 
@@ -23,10 +23,8 @@ const City = ({ setSelectedCity, selectedCity }) => {
     setSearch("");
     setDropDownActive(false);
   };
-// https://dribbble.com/shots/2298243-Weather-Widget/attachments/434687?mode=media
   return (
     <div className='dropdownContainer'>
-      <h2>Check the weather of all the cities below...</h2>
       <div className='select-box'>
         <div
           className={['options-container', dropDownActive && 'active'].join(
@@ -62,6 +60,7 @@ const City = ({ setSelectedCity, selectedCity }) => {
           <input
             type='text'
             placeholder='Start Typing...'
+            autoFocus={dropDownActive}
             value={search}
             onChange={(e) => setSearch(e.target.value.toLocaleLowerCase())}
           />
