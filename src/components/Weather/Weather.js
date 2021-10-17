@@ -30,7 +30,7 @@ const Weather = ({ selectedCity, weatherData, loading }) => {
     name,
     weather: {
       summary: { title, description },
-      temperature: { actual, feelsLike, max, min },
+      temperature: { actual, max, min },
       wind: { deg, speed },
     },
   } = weatherData ? weatherData.getCityByName : {};

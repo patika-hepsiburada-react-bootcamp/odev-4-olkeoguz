@@ -11,7 +11,7 @@ import SvgContainer from './components/UI/SvgContainer';
 function App() {
   const [selectedCity, setSelectedCity] = useState('istanbul');
 
-  const { loading, error, data } = useQuery(WEATHER_QUERY, {
+  const { loading,data } = useQuery(WEATHER_QUERY, {
     variables: { name: selectedCity },
   });
 
@@ -30,7 +30,6 @@ function App() {
           selectedCity={selectedCity}
           weatherData={data}
           loading={loading}
-          error={error}
         />
       </div>
     </div>
