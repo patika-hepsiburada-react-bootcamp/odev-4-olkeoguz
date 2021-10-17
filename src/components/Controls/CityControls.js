@@ -3,12 +3,30 @@ import ArrowDown from './ArrowDown';
 import ArrowUp from './ArrowUp';
 import { cities } from '../../data/cities';
 
+import { useHistory, useLocation } from 'react-router-dom';
+
 import './CityControls.scss';
+
+// A custom hook that builds on useLocation to parse
+// the query string for us.
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
 
 const City = ({ setSelectedCity, selectedCity }) => {
   const [dropDownActive, setDropDownActive] = useState(false);
   const [search, setSearch] = useState('');
   const [suggestions, setSuggestions] = useState(cities);
+
+  const history = useHistory();
+  let query = useQuery();
+
+  useEffect(() => {
+    // for the page refreshes
+    if (query.get('search')) {
+      setSelectedCity(query.get('search'));
+    }
+  }, [query, setSelectedCity]);
 
   useEffect(() => {
     if (!!search.length) {
@@ -20,7 +38,9 @@ const City = ({ setSelectedCity, selectedCity }) => {
 
   const changeCity = (name) => {
     setSelectedCity(name);
-    setSearch("");
+    // Change the query param
+    history.push(`/?search=${name}`);
+    setSearch('');
     setDropDownActive(false);
   };
   return (
