@@ -1,34 +1,74 @@
 .weatherContainer {
   margin-top: 8rem;
-  padding: 32px;
+  padding: 32px 0px;
   width: 100%;
   opacity: 0.9;
 
-    .card{
-      border: 1px solid #fff;
-      border-radius: 15px;
-      box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-      font-size: 2rem;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      position: relative;
+  .card {
+    border: 1px solid #fff;
+    border-radius: 15px;
+    // opacity: 0;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    font-size: 2rem;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
 
-      .card-body{
-          z-index:200;
+    &.loading{
+      opacity:0;
+      background-color:Red;
+    }
 
-          h2{
-              color:White;
+    .card-body {
+      z-index: 200;
+      padding: 2rem;
+      color: white;
+
+      .logo {
+        text-align: center;
+      }
+
+      .summary {
+        display: flex;
+        justify-content: space-between;
+        .cityInfo {
+          h3 {
+            font-weight: 400;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            padding-bottom: 2px;
           }
+
+          .date {
+            font-weight: 200;
+            font-size: 1.5rem;
+            padding-bottom: 5px;
+          }
+
+          .desc {
+            font-weight: 200;
+            font-size: 1rem;
+          }
+        }
+        .temp {
+          h4 {
+            font-size: 6rem;
+            font-weight:300;
+            letter-spacing:-0.4rem;
+          }
+        }
       }
     }
+  }
 
-    .card:before {
-      background-color: rgba(255, 255, 255, 0.363);
-      backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
-      content: '';
-      height: 100%;
-      position: absolute;
-      width: 100%;
-    }
+  .card:before {
+    background-color: rgba(255, 255, 255, 0.363);
+    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
 }

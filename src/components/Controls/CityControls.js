@@ -23,10 +23,10 @@ const City = ({ setSelectedCity, selectedCity }) => {
     setSearch("");
     setDropDownActive(false);
   };
-
+// https://dribbble.com/shots/2298243-Weather-Widget/attachments/434687?mode=media
   return (
     <div className='dropdownContainer'>
-      <h2>Cities</h2>
+      <h2>Check the weather of all the cities below...</h2>
       <div className='select-box'>
         <div
           className={['options-container', dropDownActive && 'active'].join(

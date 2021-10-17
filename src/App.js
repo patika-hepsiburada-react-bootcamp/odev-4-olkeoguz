@@ -10,8 +10,6 @@ function App() {
 
   const { data: weatherData, loading, error } = useGetWeather(selectedCity);
 
-  console.log(weatherData?.getCityByName);
-
   return (
     <div className='App'>
       <div className='root'>
